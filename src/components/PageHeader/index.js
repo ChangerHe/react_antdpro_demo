@@ -1,6 +1,6 @@
 import React, { PureComponent, createElement } from 'react';
 import PropTypes from 'prop-types';
-import { Breadcrumb, Tabs } from 'antd';
+import {Breadcrumb, Tabs, Button} from 'antd';
 import classNames from 'classnames';
 import styles from './index.less';
 
@@ -141,6 +141,13 @@ export default class PageHeader extends PureComponent {
               {extraContent && <div className={styles.extraContent}>{extraContent}</div>}
             </div>
           </div>
+        </div>
+
+        <div className={styles.edit_group}>
+          <Button size="large" type="primary" shape="circle" icon="search"/>
+          <Button size="large" type="dashed" shape="circle" icon="edit"/>
+          <Button size="large" type="default" shape="circle" icon="file-add"/>
+          <Button size="large" type="danger" shape="circle" icon="delete"/>
         </div>
         {
           tabList &&
