@@ -4,10 +4,28 @@ import {connect} from 'dva';
 import {Input, Button} from 'antd';
 import PageHeaderLayout from '../../layouts/PageHeaderLayout';
 import {getRoutes} from '../../utils/utils';
-import styles from './InterCity.less'
+// import styles from './InterCity.less'
 
 @connect()
-export default class InterCity extends Component {
+export default class Line extends Component {
+  handleTabChange = (key) => {
+    const {dispatch, match} = this.props;
+    console.log(match)
+    switch (key) {
+      case 'articles':
+        dispatch(routerRedux.push(`${match.url}/articles`));
+        break;
+      case 'applications':
+        dispatch(routerRedux.push(`${match.url}/applications`));
+        break;
+      case 'projects':
+        dispatch(routerRedux.push(`${match.url}/projects`));
+        break;
+      default:
+        break;
+    }
+  }
+
   render() {
     // const tabList = [
     //   {
@@ -37,7 +55,6 @@ export default class InterCity extends Component {
 
     const {match, routerData, location} = this.props;
     const routes = getRoutes(match.path, routerData);
-    console.log(match)
 
     return (
       <div>

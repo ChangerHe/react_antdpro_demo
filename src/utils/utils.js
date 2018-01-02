@@ -112,9 +112,12 @@ function getRelation(str1, str2) {
   传递两个参数: path: 
  */
 export function getRoutes(path, routerData) {
+  console.log(path, routerData)
   let routes = Object.keys(routerData).filter(routePath =>
     routePath.indexOf(path) === 0 && routePath !== path);
+  console.log(routes)
   routes = routes.map(item => item.replace(path, ''));
+  console.log(routes)
   let renderArr = [];
   renderArr.push(routes[0]);
   for (let i = 1; i < routes.length; i += 1) {
@@ -127,6 +130,7 @@ export function getRoutes(path, routerData) {
   }
   const renderRoutes = renderArr.map((item) => {
     const exact = !routes.some(route => route !== item && getRelation(route, item) === 1);
+    console.log(`${item}`)
     return {
       key: `${path}${item}`,
       path: `${path}${item}`,

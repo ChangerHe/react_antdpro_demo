@@ -11,12 +11,15 @@ export default class InterCity extends Component {
       curTab: 'edit'
     }
   }
-  onTabsChange = () => {
-    console.log(1)
-    this.setState = {
-      // curTab: this.state.curTab === 'edit' ? 'prepare' : 'edit'
-      curTab: 'prepare'
-    }
+  onTabsChange = (key) => {
+    // console.log(key)
+    console.log(this)
+    this.setState({
+      curTab: key
+    })
+    setTimeout(() => {
+      console.log(this.state.curTab)
+    }, 20);
   }
   // props
   render() {

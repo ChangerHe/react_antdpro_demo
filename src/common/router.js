@@ -124,11 +124,11 @@ export const getRouterData = (app) => {
       component: dynamicWrapper(app, [], () => import('../routes/InterCity/index')),
     },
     '/intercity/operation': {
-      component: dynamicWrapper(app, [], () => import('../routes/InterCity/InterCity')),
+      component: dynamicWrapper(app, [], () => import('../routes/InterCity/Operation')),
     },
     // 班车业务
     '/line': {
-      component: dynamicWrapper(app, [], () => import('../routes/InterCity/InterCity')),
+      component: dynamicWrapper(app, [], () => import('../routes/Line/Line')),
     },
     '/line/index': {
       component: dynamicWrapper(app, [], () => import('../routes/InterCity/InterCity')),
